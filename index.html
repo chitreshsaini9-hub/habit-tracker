@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Habit Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Keep the<br>chain going.</h1>
+  <div class="tz">Days counted in <select id="tz" aria-label="Time zone"></select></div>
+</header>
+
+<form class="box" id="form">
+  <div class="row">
+    <input type="text" id="name" placeholder="New habit, e.g. Read 20 pages" maxlength="60" required>
+    <select id="sched" aria-label="Schedule">
+      <option value="daily">Every day</option>
+      <option value="weekdays">Specific weekdays</option>
+      <option value="weekly">Times per week</option>
+    </select>
+    <button class="go" type="submit">Add habit</button>
+  </div>
+  <div class="row wd" id="wdBox" hidden></div>
+  <div class="row" id="timesBox" hidden>
+    <label>Times per week <input type="number" id="times" min="1" max="7" value="3" style="width:64px"></label>
+  </div>
+</form>
+
+<div class="tabs">
+  <button data-act="tab" data-v="habits" class="on">Habits</button>
+  <button data-act="tab" data-v="stats">Stats</button>
+</div>
+<div id="list"></div>
+
+<details class="box" id="tests">
+  <summary>Streak tests</summary>
+  <p class="sub">Runs the streak, stats and time zone checks against the same functions the app uses.</p>
+  <button id="runTests">Run tests</button>
+  <ul id="tout"></ul>
+</details>
+</div>
+
+<script src="streaks.js"></script>
+<script src="app.js"></script>
+<script src="browser-tests.js"></script>
+</body>
+</html>

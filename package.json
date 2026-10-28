@@ -1,0 +1,8 @@
+{
+  "name": "habit-tracker",
+  "version": "1.0.0",
+  "description": "Habit tracker with flexible schedules, streaks, heatmaps and stats",
+  "scripts": { "test": "jest" },
+  "devDependencies": { "jest": "^29.7.0" },
+  "license": "MIT"
+}
